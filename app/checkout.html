@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles/checkout.css" />
+    </head>
+    <body>
+      
+            <h2 class="heading"><span>1</span>PERSONAL INFORMATION</h2>
+
+            <div class="upperContainer">
+            <div class="formContainer">
+            <form>
+                <div class="formInput">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" placeholder="Elon" />
+                </div>
+                <div class="formInput">
+                    <label for="secondName">Second name</label>
+                    <input type="text" id="secondName" placeholder="Musk" />
+                </div>
+                <div class="formInput" id="emailContainer">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="elon@spacex.com" />
+                </div>
+                <div class="formInput">
+                    <label for="country">Country</label>
+                    <select selected="United States">
+                        <option value="United States">United States</option>
+                        <option value="France">France</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Ciechocinek">Ciechocinek</option>
+                    </select>
+                </div>
+
+                <div class="formInput">
+                    <label for="postalCode">Postal Code</label>
+                    <input type="number" id="postalCode" placeholder="10001" />
+                </div>
+
+                <div class="formInput" id="phoneNumberContainer">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="number" id="phoneNumber" placeholder="(212) 692-93-92" />
+                </div>
+
+                <h2 class="heading"><span>2</span>PAYMENT DETAILS</h2>
+
+                <div class="formInput" id="creditCardContainer">
+                    <label for="creditCardNumber">Credit Card Number</label>
+                    <input type="tel" id="creditCardNumber" placeholder="0000-0000-0000-0000" />
+                </div>
+
+                <div class="formInput">
+                    <label for="securityCode">Security Code</label>
+                    <input type="password" id="securityCode" placeholder="***" />
+                </div>
+
+                <div class="formInput">
+                    <label for="expirationDate">Expiration date</label>
+                    <input type="text" id="expirationDate" placeholder="MM/YY" />
+                </div>
+
+                <div class="formInput" id="completePurchaseContainer">
+                    <input type="submit" name="" id="completePurchaseButton" value="COMPLETE PURCHASE" />
+                </div>
+            </form>
+        </div>
+
+        <div id="purchaseSummary">
+            <div id="itemsBoughtSummary">
+                <h3>YOUR ORDER</h3>
+                <ul>
+                    <li>
+                        <p>Apple Watch Sport</p>
+                        <span>$ 580</span>
+                    </li>
+                    <li>
+                        <p>Modern Buckle</p>
+                        <span>$ 380</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="totalAndTaxSummary">
+                <ul>
+                    <li>
+                        <p>Total purchases</p>
+                        <span>$ 960.00</span>
+                    </li>
+                    <li>
+                        <p>Estimated tax</p>
+                        <span>$ 0</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="totalPrice">
+                <ul>
+                    <li>
+                        <h3>Total</h3>
+                        <span id="finalPrice">$ 960</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        <script src="scripts/formScript.js"></script>
+    </body>
+</html>

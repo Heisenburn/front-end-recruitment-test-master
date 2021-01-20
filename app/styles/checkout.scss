@@ -1,0 +1,147 @@
+* {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+body {
+    background-color: #f2f2f2;
+ 
+    padding: 100px 150px;
+    .formContainer {
+        width: 70vw;
+    }
+
+    .upperContainer{
+        display: flex;
+        .formContainer form{
+            margin-top: -10px;
+        }
+    }
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    #emailContainer,
+    #phoneNumberContainer,
+    #creditCardContainer, #completePurchaseContainer {
+        flex-basis: 100%;
+    }
+
+    #phoneNumberContainer{
+        margin-bottom: 50px;
+    }
+
+    .formInput {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+
+        box-shadow: 0.1rem 0.3rem 3.5rem rgba(0, 0, 0, 0.07);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+
+        flex-grow: 1;
+
+        label {
+            color: black;
+            position: absolute;
+            font-size: 14px;
+        }
+        input,
+        select {
+            border: none;
+            outline: 0;
+            padding: 20px 0 0 0;
+            font-size: 18px;
+        }
+
+        select {
+            color: black;
+            background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
+            -webkit-appearance: none;
+             
+        }
+    }
+
+    .heading{
+        font-size: 16px;
+        margin-bottom: 30px;
+      
+        span {
+            margin-right: 5px;
+            color: white;
+            background: black;
+            border-radius: 50px;
+            padding: 5px 10px;
+        }
+
+        
+    }
+
+    #purchaseSummary {
+        width: 30vw;
+        background-color: white;
+        outline: 2px dashed #80808061;
+        outline-offset: -10px;
+        padding: 10px 25px;
+        border-radius: 5px;
+        height: 300px;
+
+        ul {
+            padding: 0 20px;
+            list-style-type: none;
+            li {
+                font-size: 14px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        #finalPrice {
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        #totalAndTaxSummary ul,
+        #totalPrice {
+            li:first-of-type {
+                border-top: 2px dashed #80808061;
+            }
+        }
+    }
+
+    #completePurchaseContainer {
+        padding: 0;
+        background: none;
+        
+        #completePurchaseButton {
+            padding: 20px;
+            color: white;
+            box-shadow: 0.1rem 0.3rem 3.5rem rgba(0, 0, 0, 0.07);
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: rgb(107, 211, 0);
+            &:hover{
+                background-color: rgb(95, 180, 10);
+            }
+        }
+    }
+}
+
+
+//hidding arrows from input type number
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
