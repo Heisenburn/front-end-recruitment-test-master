@@ -24,10 +24,11 @@ const setInvalidInput = (elementInDOM, errorCommunication) => { // DRY
 };
 
 
-
-document.querySelector('form').addEventListener('submit', (e)=>{ //FORM SUBMIT EVENT
+document.querySelector('form').addEventListener('submit', (e)=>{
+  // FORM SUBMIT EVENT
   e.preventDefault();
-  validateErrors = 0; // state containing errors quantity  => if 0 then send form
+  validateErrors = 0; // state containing errors quantity
+  // => if 0 then send form
 
 
   document.querySelectorAll('input').forEach((item)=>{
@@ -54,7 +55,9 @@ document.querySelector('form').addEventListener('submit', (e)=>{ //FORM SUBMIT E
   }
 
   const creditCardInput = document.querySelector('#creditCardNumber');
-  if (creditCardInput.value.length !== 19 || [...creditCardInput.value].reduce((n, x) => n + (x === '-'), 0) !== 3 ) { // counting occurences of "-" in credit card number
+  if (creditCardInput.value.length !== 19 ||
+    [...creditCardInput.value].reduce((n, x) => n + (x === '-'), 0) !== 3 ) {
+    // counting occurences of "-" in credit card number
     setInvalidInput(creditCardInput, 'Not a valid credit card number');
   }
 
@@ -65,11 +68,11 @@ document.querySelector('form').addEventListener('submit', (e)=>{ //FORM SUBMIT E
   }
 
   const expirationDateInput = document.querySelector('#expirationDate');
-  if (expirationDateInput.value.length !== 5 || expirationDateInput.value.includes('/') === false) {
+  if (expirationDateInput.value.length !== 5 ||
+    expirationDateInput.value.includes('/') === false) {
     setInvalidInput(expirationDateInput, 'Not a valid expiration date');
   }
 
-  console.log(validateErrors)
   if (validateErrors === 0) {
     fetchSuccessHTML();
   }

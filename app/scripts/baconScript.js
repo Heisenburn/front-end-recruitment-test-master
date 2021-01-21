@@ -1,6 +1,5 @@
 document.querySelector('#moreBaconButton').addEventListener('click', () => {
-    let img =  document.querySelector('#baconImage');
-    
-    img.parentElement.append(img.cloneNode(true));
+  const img = document.querySelector('#baconImage');
+  img.parentElement.append(img.cloneNode(true));
 });
 
