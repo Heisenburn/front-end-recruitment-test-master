@@ -37,7 +37,7 @@ body {
 
         box-shadow: 0.1rem 0.3rem 3.5rem rgba(0, 0, 0, 0.07);
         margin: 10px;
-        padding: 10px;
+        padding: 15px;
         border-radius: 5px;
         position: relative;
 
@@ -86,7 +86,7 @@ body {
         outline-offset: -10px;
         padding: 10px 25px;
         border-radius: 5px;
-        height: 300px;
+        height: 326px;
 
         ul {
             padding: 0 20px;
@@ -109,6 +109,7 @@ body {
         #totalPrice {
             li:first-of-type {
                 border-top: 2px dashed #80808061;
+                padding-top: 10px;
             }
         }
     }
@@ -131,6 +132,19 @@ body {
     }
 }
 
+//class for validation communication
+
+.invalidInput::placeholder{
+        color: red;
+        
+    }
+
+
+//hidding placeholder on focus
+
+input:focus::placeholder {
+    color: transparent;
+  }
 
 //hidding arrows from input type number
 
