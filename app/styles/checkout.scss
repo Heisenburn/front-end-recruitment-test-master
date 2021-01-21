@@ -5,11 +5,13 @@ body {
     background-color: #f2f2f2;
  
     padding: 100px 150px;
-    .formContainer {
+}
+    #formContainer {
         width: 70vw;
     }
+    
 
-    .upperContainer{
+    #upperContainer{
         display: flex;
         .formContainer form{
             margin-top: -10px;
@@ -93,6 +95,8 @@ body {
         border-radius: 5px;
         height: 326px;
 
+        margin-top: 72px;
+
         ul {
             padding: 0 20px;
             list-style-type: none;
@@ -135,8 +139,25 @@ body {
             }
         }
     }
+
+
+#jumpToSuccessContainer{
+
+    margin-top: 50px;
+
+button {
+    padding: 10px;
+    color: white;
+    box-shadow: 0.1rem 0.3rem 3.5rem rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(107, 211, 0);
+    &:hover{
+        background-color: rgb(95, 180, 10);
+    }
 }
 
+}
 
 //class for validation communication
 
@@ -164,4 +185,93 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+//animation for success: author: https://codepen.io/kuvinod5/pen/WNvzazr
+
+#successContainer{
+
+    text-align:center;
+
+ 
+.checkmark { 
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #6bd300;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #6bd300;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    position:relative;
+    top: 5px;
+    right: 5px;
+   margin: 0 auto;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #6bd300;
+    fill: #f2f2f2;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+ 
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #6bd300;
+    }
+}
+}
+
+//media queries
+
+@media only screen and (max-width: 1050px){
+    body{
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 769px){
+     #upperContainer{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+     }
+
+     #purchaseSummary{
+         width: 80vw;
+         margin-bottom: 30px;
+         margin-top: 0;
+     }
+
+     #formContainer{
+         width: 90vw;
+     }
 }

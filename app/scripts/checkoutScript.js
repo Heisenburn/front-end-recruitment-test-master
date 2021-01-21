@@ -1,4 +1,20 @@
-let validateErrors = 0; // state containing errors quantity  => if 0 then send form
+const fetchSuccessHTML = () =>{
+  fetch('/purchase-success.html')
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(contentsOfPurchaseSuccess) {
+      document.querySelector('body').innerHTML = contentsOfPurchaseSuccess;
+    });
+};
+
+
+document.querySelector('#jumpToSuccessButton').addEventListener('click', ()=>{
+  fetchSuccessHTML();
+});
+
+let validateErrors; // state containing errors quantity  => if 0 then send form
+
 
 const setInvalidInput = (elementInDOM, errorCommunication) => { // DRY
   validateErrors += 1; // updating state
@@ -8,14 +24,13 @@ const setInvalidInput = (elementInDOM, errorCommunication) => { // DRY
 };
 
 
- 
 
-document.querySelector('form').addEventListener('submit', (e)=>{
+document.querySelector('form').addEventListener('submit', (e)=>{ //FORM SUBMIT EVENT
   e.preventDefault();
+  validateErrors = 0; // state containing errors quantity  => if 0 then send form
 
 
   document.querySelectorAll('input').forEach((item)=>{
-      
     if (item.value === '') {
       setInvalidInput(item, 'Cannot be empty!');
     }
@@ -54,20 +69,10 @@ document.querySelector('form').addEventListener('submit', (e)=>{
     setInvalidInput(expirationDateInput, 'Not a valid expiration date');
   }
 
-
+  console.log(validateErrors)
   if (validateErrors === 0) {
-   
-    fetch('/purchase-success.html')
-  .then(function(response) {
-    return response.text();
-  })
-  .then(function(contentsOfPurchaseSuccess) {
-    document.querySelector('body').innerHTML = contentsOfPurchaseSuccess;
-  });
-    
+    fetchSuccessHTML();
   }
 });
 
-
- 
 

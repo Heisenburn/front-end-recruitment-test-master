@@ -6,17 +6,15 @@
         <title>Document</title>
         <link rel="stylesheet" href="styles/checkout.css" />
     </head>
-    <div style="display: flex; align-items: center;" >
-    <h2>Shortcut to successfully sent</h2>
-    <button>Click</button>
-</div>
+  
     <body>
       
 
-            <h2 class="heading"><span>1</span>PERSONAL INFORMATION</h2>
+           
+            <div id="upperContainer">
+            <div id="formContainer">
+                <h2 class="heading"><span>1</span>PERSONAL INFORMATION</h2>
 
-            <div class="upperContainer">
-            <div class="formContainer">
             <form>
                 <div class="formInput">
                     <label for="firstName">First name</label>
@@ -111,7 +109,10 @@
             </div>
         </div>
     </div>
-
+    <div id="jumpToSuccessContainer" style="display: flex; align-items: center;" >
+        <h2>Jump to successfully sent form</h2>
+        <button id="jumpToSuccessButton">Click</button>
+    </div>
         <script src="scripts/formScript.js"></script>
         <script src="scripts/checkoutScript.js"></script>
     </body>
