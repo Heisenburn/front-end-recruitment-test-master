@@ -42,9 +42,14 @@ body {
         position: relative;
 
         flex-grow: 1;
+        
+        &:focus-within{
+            border: 1px solid #6bd300;
+        }
+        
 
         label {
-            color: black;
+            color: #000000c2;
             position: absolute;
             font-size: 14px;
         }
@@ -131,6 +136,7 @@ body {
         }
     }
 }
+
 
 //class for validation communication
 
